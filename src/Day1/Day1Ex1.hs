@@ -1,4 +1,4 @@
-module Day1 where
+module Day1.Day1Ex1 where
 
 main :: IO ()
 main = do
