@@ -7,6 +7,6 @@ main = do
 
 loadAdjacentPairs :: IO [(Int, Int)]
 loadAdjacentPairs = do
-  content <- readFile "src/Day1/input"
+  content <- readFile "src/Day1/input-ex1.txt"
   let readings = (read <$> lines content) :: [Int]
   return $ zip (init readings) (tail readings)
