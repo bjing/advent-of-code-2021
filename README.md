@@ -1,7 +1,7 @@
 # Simple Haskell Project Template
-This is a simple Haskell project template for you to start a new project from scratch
+Here are my solutions to Advent of Code 2021.
 
-The project uses [Haskell Stack] as the build tool.
+Feel free to checkout/fork/modify as you see fit. Also discussions are welcome through `Issues` and/or PRs.
 
 ## Instructions
 Please update the GHC Stack snapshot version in [stack.yaml] before building your project.
@@ -15,9 +15,34 @@ Build:
 stack build
 ```
 
-Test:
+Test (if you have any):
 ```sh
 stack test
+```
+
+### Run a single file
+```
+stack runghc <file-path>
+
+# e.g.
+stack runghc src/Day1/Day1Ex1.hs
+```
+
+### Load a file into REPL
+Start the REPL
+```
+stack ghci
+```
+
+Within the REPL prompt
+```
+:l <filepath>
+
+# e.g.
+> :l src/Day1/Day1Ex1.hs
+
+# then you can call any function from the file you loaded
+> main
 ```
 
 ### Formatter
