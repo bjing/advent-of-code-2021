@@ -1,5 +1,5 @@
-# Simple Haskell Project Template
-Here are my solutions to Advent of Code 2021.
+# Advent of Code 2021 in Haskell
+Here are my solutions to Advent of Code 2021 in Haskell.
 
 Feel free to checkout/fork/modify as you see fit. Also discussions are welcome through `Issues` and/or PRs.
 
