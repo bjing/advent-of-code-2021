@@ -1,10 +1,10 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE LambdaCase #-}
 
-module Day2.Day2.Ex1 where
+module Day2.Day2Ex1 where
 
 type HorizontalPosition = Int
 type Depth = Int
+type Position = (HorizontalPosition, Depth)
 
 data Move =
     Forward Int
@@ -13,19 +13,19 @@ data Move =
 
 main :: IO ()
 main = do
-  moves <- loadMoves
+  moves <- loadMoves "src/Day2/input-ex1.txt"
   let result = foldl doMove (0, 0) moves
   print $ uncurry (*) result
 
-doMove :: (HorizontalPosition, Depth) -> Move -> (HorizontalPosition, Depth)
+doMove :: Position -> Move -> Position
 doMove (hor, ver) = \case
   Forward steps -> (hor + steps, ver)
   Up steps -> (hor, ver - steps)
   Down steps -> (hor, ver + steps)
 
-loadMoves :: IO [Move]
-loadMoves = do
-  cmdTexts <- lines <$> readFile "src/Day2/input-ex1.txt"
+loadMoves :: FilePath -> IO [Move]
+loadMoves path = do
+  cmdTexts <- lines <$> readFile path
   return $ genMove <$> cmdTexts
 
 genMove :: String -> Move
